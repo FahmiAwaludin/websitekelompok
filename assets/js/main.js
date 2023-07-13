@@ -291,25 +291,25 @@
   new PureCounter();
 
 })()
-
-
-const count = document.getElementById("count");
+// nambah pengunjung
 
 incrementVisitsCount();
 
 function incrementVisitsCount() {
-    let visits;
+  let visits;
 
-    if (!localStorage.getItem("visits")) localStorage.setItem("visits", 1);
-    else {
-        visits = +localStorage.getItem("visits");
-        const incrementedCount = visits + 1;
+  if (!localStorage.getItem("visits")) {
+    localStorage.setItem("visits", 1);
+  } else {
+    visits = parseInt(localStorage.getItem("visits"));
+    const incrementedCount = visits + 1;
 
-        localStorage.setItem("visits", incrementedCount);
-    }
+    localStorage.setItem("visits", incrementedCount);
+  }
 
-    count.innerText = localStorage.getItem("visits");
+  count.innerText = localStorage.getItem("visits");
 }
+// nambah pengunjung
 
 // pesan1
 
