@@ -1551,5 +1551,48 @@ section {
   color: #fff;
 }
 /* baru */
+select {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
 
+/* Gaya untuk tombol <button> */
+.btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  background-color: #4CAF50;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Gaya saat tombol ditekan */
+.btn:active {
+  background-color: #45a049;
+}
+
+/* Gaya pesan status */
+.status-message {
+  font-size: 14px;
+  margin-top: 10px;
+  display: none;
+}
+
+/* Gaya pesan sukses */
+.status-message.success {
+  color: green;
+  display: block;
+}
+
+/* Gaya pesan error */
+.status-message.error {
+  color: red;
+  display: block;
+}
 /* akhir */

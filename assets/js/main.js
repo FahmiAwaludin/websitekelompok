@@ -310,3 +310,61 @@ function incrementVisitsCount() {
 
     count.innerText = localStorage.getItem("visits");
 }
+
+// pesan1
+
+function sendMessage() {
+  // Nomor WhatsApp penerima
+  var phoneNumber = "+6287781123101";
+
+  // Mengambil status barang dari input pengguna
+  var status = document.getElementById("statusBarang").value;
+
+  // Pesan yang akan dikirim berdasarkan status barang
+  var message = "";
+
+  if (status === "ready1") {
+    message = "Min, apakah barang 1 masih tersedia?";
+  } else if (status === "habis") {
+    message = "Min, apakah barang sudah habis?";
+  } else if (status === "ready2") {
+    message = "Min, apakah barang 2 masih ada";
+  }
+  else if (status === "ready3") {
+    message = "Min, apakah barang 3 masih ada";
+  }
+  else if (status === "ready4") {
+    message = "Min, apakah barang 4 masih ada";
+  }
+  else if (status === "ready5") {
+    message = "Min, apakah barang 5 masih ada";
+  }
+  else if (status === "ready6") {
+    message = "Min, apakah barang 6 masih ada";
+  }
+   else {
+    message = "Min, apakah barang tersedia?";
+  }
+
+  // Membentuk URL untuk meluncurkan WhatsApp dengan pesan tertentu
+  var url = "https://wa.me/" + phoneNumber + "?text=" + encodeURIComponent(message);
+
+  // Membuka URL dalam tab atau jendela baru
+  window.open(url);
+}
+
+// pesan2
+function sendPesan() {
+  // Nomor WhatsApp penerima
+  var phoneNumber = "+6287781123101";
+
+  // Pesan yang akan dikirim
+  var message = "Hai";
+
+  // Membentuk URL WhatsApp dengan nomor dan pesan
+  var url = "https://api.whatsapp.com/send?phone=" + encodeURIComponent(phoneNumber) + "&text=" + encodeURIComponent(message);
+
+  // Membuka URL WhatsApp dalam tab atau jendela baru
+  var win = window.open(url);
+
+}
