@@ -96,9 +96,10 @@
         </nav>
         <!-- .navbar -->
         <!-- <a href="#about" class="get-started-btn scrollto">Get Started</a> -->
-        <button type="button" class="btn btn-success">Pengunjung Website
-          <span class="counter-wrapper text-counter-wrapper" id="Stats1_totalCount">0</span>
-          </button>
+        <button class="btn btn-success">
+          Pengunjung website 
+          <h5 id="count"></h5>
+        </button>
       </div>
     </header>
     <!-- End Header -->
@@ -1423,39 +1424,7 @@
     <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
     <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
     <script src="assets/vendor/php-email-form/validate.js"></script>
-
-    <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
-
-    <script>
-      document.addEventListener("DOMContentLoaded", function() {
-        // Mendapatkan elemen dengan ID "Stats1_totalCount"
-        var element = document.getElementById("Stats1_totalCount");
-    
-        // Fungsi untuk menambahkan 1 ke nilai
-        function incrementCount() {
-          // Mendapatkan nilai teks dari elemen
-          var count = element.innerText.trim();
-    
-          // Menghapus tanda koma dari nilai teks
-          count = count.replace(/,/g, "");
-    
-          // Mengubah nilai teks menjadi angka
-          var countNumber = parseInt(count);
-    
-          // Memeriksa apakah angka valid sebelum menambahkannya
-          if (!isNaN(countNumber)) {
-            countNumber++;
-            element.innerText = countNumber.toLocaleString();
-          } else {
-            console.error("Invalid count value: " + count);
-          }
-        }
-    
-        // Menjalankan fungsi incrementCount saat halaman web diakses
-        incrementCount();
-      });
-    </script>
     
   </body>
 </html>
