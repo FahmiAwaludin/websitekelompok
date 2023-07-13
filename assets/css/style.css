@@ -1596,3 +1596,22 @@ select {
   display: block;
 }
 /* akhir */
+/* tabahan lagi */
+h5#count {
+  float: right;
+}
+
+p.id {
+  float: right;
+}
+
+button {
+  float: right;
+}
+
+.small-button {
+  font-size: 12px;
+  padding: 5px 10px;
+}
+
+/* akhir ya */
