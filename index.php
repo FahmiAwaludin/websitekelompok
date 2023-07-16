@@ -1,3 +1,41 @@
+<?php
+// Koneksi ke database
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "visit_count";
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Memeriksa apakah terjadi kesalahan koneksi
+if ($conn->connect_error) {
+    die("Koneksi gagal: " . $conn->connect_error);
+}
+
+// Mengecek apakah ada data kunjungan sebelumnya di database
+$sql = "SELECT visit_count FROM visitors";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    // Data kunjungan tersedia, maka mengambil nilai dan meningkatkannya
+    $row = $result->fetch_assoc();
+    $visitCount = $row["visit_count"] + 1;
+
+    // Memperbarui nilai kunjungan di database
+    $sql = "UPDATE visitors SET visit_count = $visitCount";
+    $conn->query($sql);
+} else {
+    // Tidak ada data kunjungan sebelumnya, maka membuat data baru
+    $visitCount = 1;
+
+    $sql = "INSERT INTO visitors (visit_count) VALUES ($visitCount)";
+    $conn->query($sql);
+}
+
+
+// Menutup koneksi ke database
+$conn->close();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -110,7 +148,7 @@
         >
           <div class="col-xl-6 col-lg-8">
             <h1>Kelompok 3<span>.</span></h1>
-            <h2>Politekini LP3I Tasikmalaya</h2>
+            <h2>Politeknik LP3I Tasikmalaya</h2>
           </div>
         </div>
 
@@ -166,11 +204,8 @@
               data-aos-delay="100"
             >
             <button type="button" class="btn btn-success small-button">
-              
-              <h5 id="count"></h5>
-              <p class="id">Pengunjung website   :</p>
-        
-          </button>
+              <p>Jumlah kunjungan: <span id="counter"><?php echo $visitCount; ?></span></p>
+        </button>
               <img src="assets/img/kemerdekaan.png" class="img-fluid" alt="" />
             </div>
             <div
@@ -1455,6 +1490,23 @@
     <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
     <script src="assets/vendor/php-email-form/validate.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      jQuery(document).ready(function() {
+          // Mengambil elemen span dengan id 'counter'
+          var counterElement = jQuery('#counter');
+  
+          // Mengambil nilai kunjungan dari elemen span
+          var visitCount = parseInt(counterElement.text());
+  
+          // Menambahkan 1 ke nilai kunjungan
+          visitCount += 1;
+  
+          // Memperbarui nilai kunjungan pada elemen span
+          counterElement.text(visitCount);
+      });
+  </script>
+  
     
   </body>
 </html>
