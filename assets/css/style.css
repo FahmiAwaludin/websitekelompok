@@ -186,6 +186,8 @@ h6 {
 */
 .navbar {
   padding: 0;
+  background: #fff;
+    /* Ubah background menjadi putih */
 }
 
 .navbar ul {

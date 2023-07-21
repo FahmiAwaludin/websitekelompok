@@ -1398,7 +1398,7 @@ $conn->close();
                 <div class="social-links mt-3">
                   <a href="#" class="twitter" title="Twitter"><i class="bx bxl-twitter"></i></a>
                   <a href="#" class="facebook" title="Facebook"><i class="bx bxl-facebook"></i></a>
-                  <a href="https://www.instagram.com/kkn03.salawu/" title="Instagram"><i class="bx bxl-instagram"></i></a>
+                  <a href="https://www.instagram.com/kkn03.sukarasa/" title="Instagram"><i class="bx bxl-instagram"></i></a>
                   <a href="#" class="google-plus" title="Google+"><i class="bx bxl-skype"></i></a>
                   <a href="#" class="linkedin" title="LinkedIn"><i class="bx bxl-linkedin"></i></a>
                </div>
