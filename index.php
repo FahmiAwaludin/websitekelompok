@@ -31,6 +31,9 @@ if ($result->num_rows > 0) {
     $conn->query($sql);
 }
 
+// Menampilkan jumlah kunjungan pada halaman
+// echo "<h1>Selamat datang di website kami!</h1>";
+// echo "<p>Jumlah kunjungan: $visitCount</p>";
 
 // Menutup koneksi ke database
 $conn->close();
@@ -43,6 +46,7 @@ $conn->close();
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
     <title>Kelompok 3</title>
+    <link rel="icon" href="assets/img/logokkn1.png">
     <meta content="" name="description" />
     <meta content="" name="keywords" />
 
@@ -91,7 +95,9 @@ $conn->close();
     <header id="header" class="fixed-top">
       <div class="container d-flex align-items-center justify-content-lg-between">
         <h1 class="logo me-auto me-lg-0">
+        <img src="assets/img/logokkn.jpeg" alt="">
           <a href="index.html">Kelompok 3<span>.</span></a>
+          
         </h1>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html" class="logo me-auto me-lg-0"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
@@ -203,8 +209,10 @@ $conn->close();
               data-aos="fade-left"
               data-aos-delay="100"
             >
+            
             <button type="button" class="btn btn-success small-button">
-              <p>Jumlah kunjungan: <span id="counter"><?php echo $visitCount; ?></span></p>
+              <p>Jumlah kunjungan: <span id="counter">
+                <?php echo $visitCount; ?></span></p>
         </button>
               <img src="assets/img/kemerdekaan.png" class="img-fluid" alt="" />
             </div>
@@ -1246,14 +1254,16 @@ $conn->close();
             <p>Lokasi-KKN</p>
           </div>
 
-          <div>
-            <iframe
-              style="border: 0; width: 100%; height: 270px"
-              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621"
-              frameborder="0"
-              allowfullscreen
-            ></iframe>
-          </div>
+         <div>
+  <a href="https://maps.google.com/?q=lokasi">
+    <iframe
+      style="border: 0; width: 100%; height: 270px"
+      src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621"
+      frameborder="0"
+      allowfullscreen
+    ></iframe>
+  </a>
+</div>
 
           <!-- <div class="row mt-5">
             <div class="col-lg-4">
@@ -1490,7 +1500,7 @@ $conn->close();
     <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
     <script src="assets/vendor/php-email-form/validate.js"></script>
     <script src="assets/js/main.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
       jQuery(document).ready(function() {
           // Mengambil elemen span dengan id 'counter'
@@ -1505,7 +1515,7 @@ $conn->close();
           // Memperbarui nilai kunjungan pada elemen span
           counterElement.text(visitCount);
       });
-  </script>
+  </script> -->
   
     
   </body>
